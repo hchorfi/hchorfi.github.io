@@ -1,0 +1,93 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*
+flip card
+*/
+.infos{
+  margin: 10px;
+}
+.inner-body{
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card{
+    margin-bottom: 20px;
+    border: 0px;
+}
+
+.card img{
+    border-radius: 5px;
+}
+
+.card-flip > div {
+    backface-visibility: hidden;
+    transition: transform 300ms;
+    transition-timing-function: linear;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  .card-front {
+    transform: rotateY(0deg);
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+  }
+  
+  .card-flip.flip .card-front {
+    transform: rotateY(-180deg);
+  }
+    
+  .card-flip.flip .card-back {
+    transform: rotateY(0deg);
+  }
+
+  .shake{
+    animation: shake 0.35s ease-in-out;
+  }
+  @keyframes shake{
+      0%, 100%{
+        transform: translateX(0);
+      }
+      20%{
+        transform: translateX(-13px);
+      }
+      40%{
+        transform: translateX(13px);
+      }
+      60%{
+        transform: translateX(-8px);
+      }
+      80%{
+          transform: translateX(8px);
+      }
+  }
